@@ -1,0 +1,48 @@
+.message {
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.imageAndText {
+
+}
+
+.imageAndText img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-items: right;
+    justify-content: space-evenly;
+    text-align: right;
+    background-color: #0066cc;
+    word-wrap: normal;
+}
+
+.text:after {
+
+}
+
+.name {
+
+}
+
+.messageText {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 490px;
+    color: #FFFFFF;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.time {
+
+}
