@@ -21,7 +21,7 @@ import GreetingContainer from './GreetingContainer'
 // types
 export type UserType = {
     _id: string // need to fix any
-    name: string | RegExp// need to fix any
+    name: string // need to fix any
 }
 
 export const pureAddUserCallback = (name: string, setUsers: (users: UserType[]) => void, users: UserType[]) => { // need to fix any
