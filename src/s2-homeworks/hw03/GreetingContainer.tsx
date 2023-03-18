@@ -1,4 +1,4 @@
-import React, {ChangeEvent, KeyboardEvent, useState} from 'react'
+import React, {ChangeEvent, KeyboardEvent, useEffect, useState} from 'react'
 import Greeting from './Greeting'
 import {UserType} from './HW3'
 
@@ -42,6 +42,12 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
     // деструктуризация пропсов
     const [name, setName] = useState<string>('') // need to fix any
     const [error, setError] = useState<string>('') // need to fix any
+    const [count, setCount] = useState<number>(0)
+    const usersCount = () => {
+        setCount(users.length)
+    }
+    useEffect(() => usersCount(), [users])
+
 
     const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => { // need to fix any
         setName(e.currentTarget.value)
@@ -59,8 +65,10 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
         pureOnEnter(e, addUser)
     }
 
-    const totalUsers = users.length // need to fix
-    const lastUserName: string = name.trim()  // need to fix
+    const trimmedName = name.trim()
+
+    const totalUsers = count // need to fix
+    const lastUserName = trimmedName // need to fix
 
     return (
         <Greeting
