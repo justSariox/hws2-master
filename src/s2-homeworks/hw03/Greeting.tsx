@@ -50,7 +50,6 @@ const Greeting: React.FC<GreetingPropsType> = (
                         {error}
                     </div>
                 </div>
-
                 <button
                     id={'hw3-button'}
                     onClick={addUser}
@@ -66,6 +65,7 @@ const Greeting: React.FC<GreetingPropsType> = (
                     Привет <span id={'hw3-last-user'}>{lastUserName}</span>!
                 </div>
             )}
+            Привет <span id={'hw3-last-user'}>hgg</span>!
         </div>
     )
 }
