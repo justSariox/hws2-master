@@ -55,12 +55,12 @@ const Greeting: React.FC<GreetingPropsType> = (
                     id={'hw3-button'}
                     onClick={addUser}
                     className={s.button}
-                    disabled={!name}
+                    disabled={!name.trim()}
                 >
                     add
                 </button>
             </div>
-            
+
             {lastUserName && (
                 <div className={s.greeting}>
                     Привет <span id={'hw3-last-user'}>{lastUserName}</span>!
