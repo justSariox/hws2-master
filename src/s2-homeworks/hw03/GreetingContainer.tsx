@@ -42,9 +42,9 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
     // деструктуризация пропсов
     const [name, setName] = useState<string>('') // need to fix any
     const [error, setError] = useState<string>('') // need to fix any
-    const [count, setCount] = useState<number>(0)
+    const [userCountState, setUserCountState] = useState<number>(0)
     const usersCount = () => {
-        setCount(users.length)
+        setUserCountState(users.length)
     }
     useEffect(() => usersCount(), [users])
 
@@ -67,7 +67,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
 
     const trimmedName = name.trim()
 
-    const totalUsers: number = count // need to fix
+    const totalUsers: number = userCountState // need to fix
     const lastUserName: string = trimmedName // need to fix
 
     return (
