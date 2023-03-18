@@ -13,7 +13,7 @@ export const pureAddUser = (name: string, setError: (error: string) => void, set
     // !name.trim() ? setError('Ошибка! Введите имя!') : addUserCallback(name)
     // setName('')
     if (!name.trim()) {
-        setError('Имя не может быть пустым')
+        setError('Ошибка! Введите имя!')
     } else {
         addUserCallback(name)
         setName('')
@@ -21,7 +21,7 @@ export const pureAddUser = (name: string, setError: (error: string) => void, set
 }
 
 export const pureOnBlur = (name: string, setError: (error: string) => void) => {
-    !name.trim() ? setError('Имя не может быть пустым') : setError('')
+    !name.trim() ? setError('Ошибка! Введите имя!') : setError('')
 
 }
 
