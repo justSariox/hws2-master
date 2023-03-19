@@ -42,15 +42,6 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
     // деструктуризация пропсов
     const [name, setName] = useState<string>('') // need to fix any
     const [error, setError] = useState<string>('') // need to fix any
-    const [userCountState, setUserCountState] = useState<number>(0)
-
-
-
-    const usersCount = () => {
-        setUserCountState(users.length)
-    }
-    useEffect(() => usersCount(), [users])
-
 
     const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => { // need to fix any
         setName(e.currentTarget.value)
@@ -70,8 +61,8 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
 
 
 
-    const totalUsers: number = userCountState // need to fix
-    const lastUserName: any = users[0].name // need to fix
+    const totalUsers: number = users.length // need to fix
+    const lastUserName: string = users.toString() // need to fix
 
     return (
         <Greeting
