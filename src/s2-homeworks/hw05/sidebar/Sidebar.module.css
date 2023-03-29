@@ -11,12 +11,14 @@
 }
 
 .nav a {
+    color: black;
 }
 
 .nav a:hover {
 }
 
 .nav a.active {
+    color: #0066CC;
 }
 .close {
 }
