@@ -42,11 +42,11 @@ function Clock() {
         year: 'numeric'
     })
 
-    const formatterDay = Intl.DateTimeFormat('ru', {
+    const formatterDay = Intl.DateTimeFormat('en', {
         weekday: 'long'
     })
 
-    const formatterMonth = Intl.DateTimeFormat('ru', {
+    const formatterMonth = Intl.DateTimeFormat('en', {
         month: 'long'
     })
 
@@ -57,7 +57,8 @@ function Clock() {
     const stringDay = formatterDay.format(date) || <br/> // пишут студенты
     const stringMonth = formatterMonth.format(date) || <br/> // пишут студенты
 
-    useEffect(() => {}, [date])
+    useEffect(() => {
+        console.log('rerender')}, [date])
 
     return (
         <div className={s.clock}>
