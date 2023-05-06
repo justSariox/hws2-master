@@ -20,7 +20,7 @@ function HW11() {
             setValue1(value[0])
             setValue2(value[1])
         } else {
-            setValue2(value)
+            setValue1(value)
         }
 
 
@@ -47,7 +47,7 @@ function HW11() {
                         <span id={'hw11-value-1'} className={s.number}>{value1}</span>
                         <SuperRange
                             id={'hw11-double-slider'}
-                            value={value2}
+                            value={[value1, value2]}
                             onChange={change}
 
                         />
