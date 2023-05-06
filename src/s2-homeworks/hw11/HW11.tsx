@@ -13,16 +13,13 @@ import SuperRange from './common/c7-SuperRange/SuperRange'
 function HW11() {
     // for autotests // не менять // можно подсунуть в локалСторэдж нужные числа, чтоб увидеть как они отображаются
     const [value1, setValue1] = useState(restoreState<number>('hw11-value1', 0))
-    const [value2, setValue2] = useState(restoreState<number[]>('hw11-value2', [0, 100]))
+    const [value2, setValue2] = useState(restoreState<number>('hw11-value2', 100))
 
     const change = (event: Event, value: number | Array<number>) => {
-        if (!Array.isArray(value)) {
-            setValue1(value)
-            setValue2([value, value2[1]])
-        } else {
+        if (Array.isArray(value)) {
             setValue1(value[0])
-            setValue2(value)
-        }
+            setValue2(value[1])
+        } else setValue1(value)
 
 
     }
@@ -50,9 +47,8 @@ function HW11() {
                             id={'hw11-double-slider'}
                             value={value2}
                             onChange={change}
-                            disableSwap
                         />
-                        <span id={'hw11-value-2'} className={s.number}>{value2[value2.length - 1]}</span>
+                        <span id={'hw11-value-2'} className={s.number}>{value2}</span>
                     </div>
                 </div>
             </div>
