@@ -25,7 +25,7 @@ const HW13 = () => {
         const url =
             x === null
                 ? 'https://xxxxxx.ccc' // имитация запроса на не корректный адрес
-                : 'https://samurai.it-incubator.io/api/3.0/homework/test'
+                : 'https://samurai.it-incubator.io/api/3.0/homework/test/'
 
 
         setCode('')
@@ -40,12 +40,11 @@ const HW13 = () => {
                 setCode(`Status ${res.status}`)
                 setImage(success200)
                 setInfo(res.data.info)
-
+                console.log(res.data)
             })
             .catch((e) => {
                 if (e.response.status) {
-                    console.log(e.response.status)
-                    setText(`Error ${e.response.status}`)
+                    console.log(e.response.data.errorText)
                     setImage(e.response.status === 500 ? error500 : error400)
                     setCode(e.response.data.info)
                     setText(e.response.data.errorText)
