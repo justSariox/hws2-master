@@ -36,40 +36,25 @@ const HW13 = () => {
         axios
             .post(url, {success: x})
             .then((res) => {
-                setText('...всё ок)')
-                setCode('Код 200!')
+                setText(res.data.errorText)
+                setCode(`Status ${res.status}`)
                 setImage(success200)
-                setInfo('')
+                setInfo(res.data.info)
 
             })
             .catch((e) => {
-                if (e.response)
-                switch (e.response.status) {
-                    case 500: {
-                        setCode('500')
-                        setImage(error500)
-                        setInfo('')
-                        setText('эмитация ошибки на сервере')
-                        break
-                    }
-
-                    case 400: {
-                        setText('Ты не отправил success в body вообще!')
-                        setCode('400')
-                        setImage(error400)
-                        setInfo('')
-                        break
-                    }
-                    default: {
-                        setCode(`Error ${e.response.status}`);
-                        setImage(errorUnknown);
-                        setInfo('');
-                        break;
-                    }
+                if (e.response.status) {
+                    console.log(e.response.status)
+                    setText(`Error ${e.response.status}`)
+                    setImage(e.response.status === 500 ? error500 : error400)
+                    setCode(e.response.data.info)
+                    setText(e.response.data.errorText)
+                } else {
+                    setImage(errorUnknown)
+                    setCode('Error')
+                    setInfo(e.name)
+                    setText(e.message)
                 }
-                // setCode('Код 400!')
-                // setImage(error400)
-                // setInfo('')
             })
             .finally(() => {
                 setIsLoading(false)
