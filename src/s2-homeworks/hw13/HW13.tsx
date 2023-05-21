@@ -46,8 +46,9 @@ const HW13 = () => {
                 if (e.response.status) {
                     console.log(e.response.data.errorText)
                     setImage(e.response.status === 500 ? error500 : error400)
-                    setCode(e.response.data.info)
+                    setCode(e.response.status)
                     setText(e.response.data.errorText)
+                    setInfo(e.response.data.info)
                 } else {
                     setImage(errorUnknown)
                     setCode('Error')
@@ -57,7 +58,6 @@ const HW13 = () => {
             })
             .finally(() => {
                 setIsLoading(false)
-                setInfo('')
             })
     }
 
