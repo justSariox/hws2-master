@@ -57,6 +57,7 @@ const HW13 = () => {
             })
             .finally(() => {
                 setIsLoading(false)
+                setInfo('')
             })
     }
 
