@@ -52,10 +52,10 @@ const HW15 = () => {
         getTechs(params)
             .then((res) => {
                 // делает студент
+                setLoading(false)
                 if (res) {
                     setTechs(res.data.techs)
                     setTotalCount(res.data.totalCount)
-                    setLoading(false)
                 }
                 // сохранить пришедшие данные
 
@@ -78,8 +78,8 @@ const HW15 = () => {
 
     const onChangeSort = (newSort: string) => {
         // делает студент
-        setSort(newSort)
         setPage(1)
+        setSort(newSort)
         sendQuery({page, count, sort: newSort})
         setSearchParams({page: page.toString(), count: count.toString()})
         // setSort(
@@ -93,7 +93,7 @@ const HW15 = () => {
 
     useEffect(() => {
         const params = Object.fromEntries(searchParams)
-        sendQuery({page: params.page, count: params.count})
+        sendQuery({page: +params.page, count: +params.count, sort})
         setPage(+params.page || 1)
         setCount(+params.count || 4)
     }, [searchParams, sort])
