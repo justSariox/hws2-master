@@ -44,7 +44,7 @@ const HW15 = () => {
     const [count, setCount] = useState(4)
     const [idLoading, setLoading] = useState(false)
     const [totalCount, setTotalCount] = useState(100)
-    const [searchParams, setSearchParams] = useSearchParams()
+    const [searchParams, setSearchParams] = useSearchParams('?page=1&count=4')
     const [techs, setTechs] = useState<TechType[]>([])
 
     const sendQuery = (params: any) => {
@@ -52,8 +52,8 @@ const HW15 = () => {
         getTechs(params)
             .then((res) => {
                 // делает студент
-                setLoading(false)
                 if (res) {
+                    setLoading(false)
                     setTechs(res.data.techs)
                     setTotalCount(res.data.totalCount)
                 }
