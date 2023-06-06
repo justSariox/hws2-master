@@ -3,32 +3,37 @@
     flex-direction: row;
     justify-content: space-between;
     max-width: 80%;
-    resize: none;
     height: 100px;
+    margin: 20px auto;
 }
 
 .textarea {
-    width: 100%;
-    margin-right: 44px;
-    max-height: 40px;
+    width: calc(100% - 130px);
+    max-height: 80px;
+    margin-right: 20px;
+    padding: 10px;
     background-color: #F5F7FB;
-    overflow: hidden;
+    border: none;
+    border-radius: 5px;
+    overflow: auto;
     resize: none;
-    height: 100px;
 }
 
 .button {
     width: 100px;
+    max-height: 40px;
     padding: 5px;
     border-radius: 20px;
     background-color: #0066cc;
-    border: 1px solid #0066cc;
-    max-height: 30px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
 }
 
 .button:hover {
-    border: 1px solid black;
+    background-color: #0059b3;
 }
-.button:active {
 
+.button:active {
+    background-color: #004d99;
 }

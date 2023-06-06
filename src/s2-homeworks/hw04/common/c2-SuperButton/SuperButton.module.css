@@ -15,6 +15,7 @@
     color: #a6e6a6;
     background: #004d99;
     opacity: 0.5;
+    cursor: not-allowed;
 }
 
 .secondary {
@@ -43,7 +44,6 @@
 .secondary:hover {
     background: #E5F0FA;
 }
-
 
 .default:active {
     background: #0059b3;

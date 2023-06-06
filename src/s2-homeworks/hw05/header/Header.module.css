@@ -1,8 +1,44 @@
 .burgerMenuIcon {
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.burgerMenuIcon::before,
+.burgerMenuIcon::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    background-color: #333;
+    border-radius: 2px;
+    transition: 0.2s ease-in-out;
+}
+
+.burgerMenuIcon::before {
+    top: -8px;
+}
+
+.burgerMenuIcon::after {
+    bottom: -8px;
+}
+
+.burgerMenuIcon.active::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.burgerMenuIcon.active::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+}
+
+.burgerMenuIcon.active {
+    transform: rotate(180deg);
 }
 
 .header {
-}
-
-.header h1 {
+    display: flex;
 }
